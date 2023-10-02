@@ -1,0 +1,67 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row" >
+      <div class="col-md-6 offset-md-3">
+        
+        <mat-card>
+        <div class="container text-center">
+
+          <img src="../../../assets/logo.png" />
+        </div>
+
+        <h1 class="text-center">Login here</h1>
+
+        <!-- {{loginData | json}} -->
+        <form (ngSubmit)="formSubmit()">
+          <!-- user name field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input
+            [(ngModel)]="loginData.name"
+              required
+              name="name"
+              matInput
+              placeholder="Enter Your Name"
+            />
+            <mat-hint>valid user name..</mat-hint>
+          </mat-form-field>
+
+          <!-- password field -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+            [(ngModel)]="loginData.password"
+              type="password"
+              required
+              name="name"
+              matInput
+              placeholder="Enter Your password"
+            />
+            <mat-hint>valid Password..</mat-hint>
+          </mat-form-field>
+          <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Login</button>
+                    <button class="ml20" type="reset"  mat-raised-button color="accent">clear</button>
+          </div>
+        
+          <!-- email field -->
+          <!-- <mat-form-field
+            appearance="outline"
+            class="full-width"
+          >
+            <mat-label>Email</mat-label>
+            <input
+              required
+              name="name"
+              matInput
+              placeholder="Enter Your email"
+            />
+            <mat-hint>valid user name..</mat-hint>
+          </mat-form-field> -->
+     
+        </form>
+      </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

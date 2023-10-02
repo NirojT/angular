@@ -1,0 +1,40 @@
+
+<!-- {{posts|json}} -->
+<!-- {{user|json}}  -->
+<div class="container" style="margin-left: 300px;">
+<div class="posts-container">
+          <div *ngIf="posts && posts.length > 0; else noPosts">
+          <div *ngFor="let post of posts">
+          <mat-card class="example-card post-container" style="margin-bottom: 50px; width: 400px;">
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title>{{post.title}}</mat-card-title>
+                      
+                      
+                    </mat-card-header>
+                    <img mat-card-image style="height:60%;" width="80%" [src]="post.image" alt="Photo of Post">
+                    <mat-card-content>
+                      <h3>
+                       {{post.content}} and my pid is {{post.pid}}</h3>
+          
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+                      <p style="margin-left: 330px;"> post by {{post.user.name}}</p>
+                      
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button style="    margin-right: 20px; margin-left: 105px;" mat-raised-button color="warn"     (click)="delete(post.pid)">Delete</button>
+                      
+                      <!-- <button mat-raised-button color="primary"   routerLink="/user/updatePost"  >Edit</button>
+                       -->
+                    </mat-card-actions>
+                  </mat-card>
+          </div>  
+          </div>
+          <ng-template #noPosts>No posts found.</ng-template>
+          </div>
+</div>

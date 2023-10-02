@@ -1,0 +1,83 @@
+<div class="bootstrap-wrapper">
+<!-- {{user|json}} -->
+
+          <div class="container">
+
+                    <div class="row mt20">
+
+
+                              <div class="col-md-6 offset-md-3 text-center">
+                                        <!-- <h1>Welcome to homepage page</h1> -->
+
+                                        <!--banner  -->
+	<div class="container-fluid p-0 m-0">
+
+		<div class="jumbotron primary-background text-white banner-background">
+			<div class="container">
+				<h3 class="display-3">Welcome To </h3>
+				<h3>Tech Blog</h3>
+				<p style="font-style: italic;">Welcome to Technological Blog, world of Technology A
+					programming language is a system of notation for writing computer
+					programs.[1] Most programming languages are text-based formal
+					languages, but they may also be graphical. They are a kind of
+					computer language. The description of a programming language is
+					usually split into the two components of syntax (form) and
+					semantics (meaning), which are usually defined by a formal language
+				</p>
+                                      
+				
+			</div>
+
+			             
+
+
+<!-- {{posts|json}} -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="posts-container">
+	<div *ngIf="posts && posts.length > 0; else noPosts">
+	<div *ngFor="let post of posts">
+	<mat-card class="example-card post-container" style="margin-bottom: 50px; width: 400px;">
+		<mat-card-header>
+		  <div mat-card-avatar class="example-header-image"></div>
+		  <mat-card-title>{{post.title}}</mat-card-title>
+		  
+		  
+		</mat-card-header>
+		<img mat-card-image style="height:60%;" width="80%" [src]="post.image" alt="Photo of Post">
+		<mat-card-content>
+		  <p>
+		   {{post.content}}
+	
+	<br>
+		   post by {{post.user.name}}
+		  </p>
+		</mat-card-content>
+		
+	        </mat-card>
+	</div>  
+	</div>
+	<ng-template #noPosts>No posts found.</ng-template>
+	</div>
+
+
+
+
+
+
+
+
+
+		</div>
+
+	</div>
+
+                              </div>
+                    </div>
+          </div>
+</div>
+
+

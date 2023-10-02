@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+          <a 
+          routerLink="/"
+          mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>star</mat-icon>
+          </a>
+          <span>TechBlog</span>
+          <span class="example-spacer"></span>
+
+
+
+          <a 
+          *ngIf="!isLogedIn"
+          
+          routerLink="/login"
+          mat-icon-button
+           
+           >
+           Login
+           
+          
+        </a>
+         
+        
+          <!-- next way -->
+          <a 
+          *ngIf="!isLogedIn"
+          
+          [routerLink]="'/signup'"
+          mat-icon-button 
+          style="margin-right: 50px; margin-left: 30px;"
+            >
+           register
+      </a>
+
+
+       <!-- name -->
+       <a 
+       *ngIf="isLogedIn && user"
+       [routerLink]="role === 'Admin' ? '/admin/profile' : '/user/profile'"
+   
+       mat-icon-button 
+       style="margin-right: 50px; margin-left: 30px;"
+         >
+        {{user.name}} 
+        
+   </a>
+      
+
+      <!-- logout -->
+      <a 
+      *ngIf="isLogedIn"
+  
+      (click)="logout()"
+      
+   
+      mat-icon-button 
+      style="margin-right: 50px; margin-left: 30px;"
+        >
+       logout
+  </a>
+         
+          
+        </mat-toolbar>
+        <!-- {{role|json}} -->

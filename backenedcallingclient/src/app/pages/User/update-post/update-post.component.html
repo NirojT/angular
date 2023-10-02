@@ -1,0 +1,45 @@
+<h1>update post</h1>
+
+<mat-card-content>
+<div class="container">
+<!-- {{user|json}} -->
+
+ 
+        
+         
+
+    
+
+            {{posts | json}}
+    
+            <form (ngSubmit)="formsSubmit()">
+
+               
+              <div class="form-group">
+                <label for="name">Title</label>
+                <input type="text" class="form-control" id="title" value="posts.title"
+                [(ngModel)]="posts.title"
+                name="title">
+              </div>
+         
+             
+              <div class="form-group">
+                <label for="status">content</label>
+                <input type="text" class="form-control" id="content" value="posts.content"
+                [(ngModel)]="posts.content"
+                name="content">
+              </div>
+             
+            
+        
+              <button  type="submit" class="btn btn-primary">update</button>
+           
+            </form>
+          </div>
+        
+          
+       
+          
+       
+</mat-card-content>
+<!-- {{adminData|json}} -->

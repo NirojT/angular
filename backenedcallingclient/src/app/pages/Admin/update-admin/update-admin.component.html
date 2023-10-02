@@ -1,0 +1,36 @@
+<h1>update Admin</h1>
+
+<mat-card-content>
+<div class="container">
+<!-- {{Admin|json}} -->
+
+ 
+        
+         
+           
+
+
+            <!-- {{postData | json}} -->
+            <form (ngSubmit)="formSubmit()">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" value="Admin.username"
+                [(ngModel)]="Admin.name"
+                name="name">
+              </div>
+             
+              <div class="form-group">
+                <label for="status">Email</label>
+                <input type="text" class="form-control" id="email" value="Admin.email"
+                [(ngModel)]="Admin.email"
+                name="email">
+              </div>
+             
+            
+        
+              <button  type="submit" class="btn btn-primary">update</button>
+            </form>
+          </div>
+       
+</mat-card-content>
+<!-- {{adminData|json}} -->

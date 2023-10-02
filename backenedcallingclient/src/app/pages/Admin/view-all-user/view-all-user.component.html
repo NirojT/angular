@@ -1,0 +1,40 @@
+
+<!-- {{users|json}} -->
+<div class="posts-container">
+<!-- <div *ngIf="users && users.length > 0; else noUsers"> -->
+<div *ngFor="let user of users">
+
+<mat-card class="example-card post-container" style="margin-bottom: 50px; width: 400px;">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <h1 style="padding-left: 70px;">User Details</h1>
+           
+            
+            
+            
+          </mat-card-header>
+          <!-- <img mat-card-image style="height:60%;" width="80%" [src]="user.profile" alt="Photo of Post">
+           -->
+          <mat-card-content>
+            
+             <!-- {{post.content}} -->
+             <h3>User Id : {{user.uid}}</h3>
+             <h3>User name : {{user.name}}</h3>
+             <h3>User email : {{user.email}}</h3>
+             <h3>Active status : {{user.enabled}}</h3>
+                  
+<br>
+             <!-- post by {{post.user.name}} -->
+            
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="delete(user.uid,user.userRole_id)"    >Delete</button>
+            <!-- (click)="delete(post.pid)" -->
+          </mat-card-actions>
+        </mat-card>
+</div>
+</div>
+
+
+<!-- <ng-template #noUsers>No Users found.</ng-template>
+</div> -->
